@@ -1,0 +1,114 @@
+posts
+USERS
+COMMENTS
+TODOS
+
+/ - home page
+/contacts - kontaktu puslapis
+/about-us - apie mus puslapis
+
+/page-not-found - error puslapis, kai neranda
+
+
+GET SINGLE:
+/posts/:id - puslapis, kuriame atvaizduojama vieno post informacija (pagal id)
+post.html
+post.js
+
+{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt",
+    "body": "quia"
+}
+
+
+/users/:id - puslapis, kuriame atvaizduojama vieno user informacija (pagal id)
+user.html
+user.js
+
+{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874",
+        "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+        }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+    }
+},
+
+
+
+/todos/:id - puslapis, kuriame atvaizduojama vieno todo informacija (pagal id)
+/comments/:id - puslapis, kuriame atvaizduojama vieno comments informacija (pagal id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GET ALL:
+/posts - puslapis, kuriame atvaizduojami visi posts
+
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt",
+        "body": "quia"
+    }
+]
+
+
+
+/users - puslapis, kuriame atvaizduojami visi users
+/todos - puslapis, kuriame atvaizduojami visi todos
+/comments - puslapis, kuriame atvaizduojami visi comments
+
+POST - create:
+/posts/create - puslapis, kuriame galime sukurti nauja post
+/users/create - puslapis, kuriame galime sukurti nauja user
+/todos/create - puslapis, kuriame galime sukurti nauja todo
+/comments/create - puslapis, kuriame galime sukurti nauja comment
+
+PUT/PATCH - update:
+/posts/edit - puslapis, kuriame galime redaguoti sena post
+/users/edit - puslapis, kuriame galime redaguoti sena user
+/todos/edit - puslapis, kuriame galime redaguoti sena todo
+/comments/edit - puslapis, kuriame galime redaguoti sena comment
+
+?????
+DELETE - delete:
+/posts/delete - puslapis, kuriame galime istrinti post
+/users/delete - puslapis, kuriame galime istrinti user
+/todos/delete - puslapis, kuriame galime istrinti todo
+/comments/delete - puslapis, kuriame galime istrinti comment
