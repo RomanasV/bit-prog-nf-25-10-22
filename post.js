@@ -1,3 +1,19 @@
+const init = (req, res) => {
+  const urlSearch = location.search;
+  const urlSearchParams = new URLSearchParams(urlSearch);
+  const postId = urlSearchParams.get("post-id");
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const pageContent = document.querySelector("#page-content");
+
+      const postElement = postContent(data);
+
+      pageContent.append(postElement);
+    });
+};
+
 //
 //
 //
@@ -44,12 +60,4 @@ const postContent = (param) => {
   return postWrapper;
 };
 
-fetch("https://jsonplaceholder.typicode.com/posts/2")
-  .then((res) => res.json())
-  .then((data) => {
-    const pageContent = document.querySelector("#page-content");
-
-    const postElement = postContent(data);
-
-    pageContent.append(postElement);
-  });
+init();
