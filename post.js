@@ -3,27 +3,21 @@ const init = async () => {
   const urlSearchParams = new URLSearchParams(urlSearch);
   const postId = urlSearchParams.get("post-id");
 
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${postId}`,
-  );
-
-  const data = await res.json();
-
   const pageContent = document.querySelector("#content");
 
-  const postElement = postContent(data);
+  const postData = await fetchPost(postId);
+  const postElement = postContent(postData);
 
   pageContent.append(postElement);
 };
 
-//
-//
-//
+const fetchPost = async (id) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const post = await res.json();
 
-//
-//
-//
-//
+  return post;
+};
+
 const postContent = (param) => {
   // const title = param.title;
   // const body = param.body;

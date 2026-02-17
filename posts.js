@@ -1,16 +1,17 @@
-const init = () => {
-  fetch(`https://jsonplaceholder.typicode.com/posts`)
-    .then((res) => res.json())
-    .then((posts) => {
-      const content = document.querySelector("#content");
+const init = async () => {
+  const content = document.querySelector("#content");
 
-      const postsList = postsListComponent(posts);
+  const posts = await fetchPosts();
 
-      content.append(postsList);
-    });
+  const postsList = postsListComponent(posts);
+  content.append(postsList);
 };
 
-init();
+const fetchPosts = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const posts = await res.json();
+  return posts;
+};
 
 const postsListComponent = (data) => {
   const postsListWrapper = document.createElement("div");
@@ -37,3 +38,5 @@ const postsListComponent = (data) => {
 
   return postsListWrapper;
 };
+
+init();
