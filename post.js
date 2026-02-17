@@ -1,17 +1,19 @@
-const init = (req, res) => {
+const init = async () => {
   const urlSearch = location.search;
   const urlSearchParams = new URLSearchParams(urlSearch);
   const postId = urlSearchParams.get("post-id");
 
-  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const pageContent = document.querySelector("#content");
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${postId}`,
+  );
 
-      const postElement = postContent(data);
+  const data = await res.json();
 
-      pageContent.append(postElement);
-    });
+  const pageContent = document.querySelector("#content");
+
+  const postElement = postContent(data);
+
+  pageContent.append(postElement);
 };
 
 //
