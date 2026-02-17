@@ -6,7 +6,7 @@ const init = (req, res) => {
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then((res) => res.json())
     .then((data) => {
-      const pageContent = document.querySelector("#page-content");
+      const pageContent = document.querySelector("#content");
 
       const postElement = postContent(data);
 
@@ -38,7 +38,7 @@ const postContent = (param) => {
   postWrapper.classList.add("post-wrapper");
 
   const postTitle = document.createElement("h1");
-  postTitle.textContent = "Title: " + title;
+  postTitle.textContent = id + ". " + title;
   postWrapper.append(postTitle);
 
   if (body) {
@@ -52,10 +52,6 @@ const postContent = (param) => {
     postUserId.textContent = "User ID: " + userId;
     postWrapper.append(postUserId);
   }
-
-  const postId = document.createElement("p");
-  postId.textContent = "ID: " + id;
-  postWrapper.append(postId);
 
   return postWrapper;
 };
