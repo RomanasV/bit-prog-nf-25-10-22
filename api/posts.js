@@ -11,6 +11,23 @@ export const getPosts = async () => {
   return posts;
 };
 
-export const createPost = () => {};
+export const createPost = async (data) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  const post = await res.json();
+  return post;
+};
+
 export const updatePost = () => {};
-export const deletePost = () => {};
+
+export const deletePost = async (id) => {
+  await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    method: "DELETE",
+  });
+};
