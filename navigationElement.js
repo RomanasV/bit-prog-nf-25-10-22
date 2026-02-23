@@ -8,7 +8,6 @@ const navigationElement = () => {
   const menuLinks = [
     { name: "Home", href: "index.html" },
     { name: "Posts", href: "posts.html" },
-    { name: "Create Post", href: "create-post.html" },
     { name: "Users", href: "users.html" },
     { name: "Todos", href: "todos.html" },
     { name: "Comments", href: "comments.html" },

@@ -6,6 +6,11 @@ const postsList = (data) => {
   postsListTitle.textContent = data.length > 0 ? "Posts:" : "No Posts";
   postsListWrapper.append(postsListTitle);
 
+  const newPostLink = document.createElement("a");
+  newPostLink.textContent = "Create New Post";
+  newPostLink.href = "create-post.html";
+  postsListWrapper.append(newPostLink);
+
   if (data.length > 0) {
     const postsList = document.createElement("ul");
     postsListWrapper.append(postsList);
