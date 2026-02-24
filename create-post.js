@@ -1,9 +1,12 @@
 import postForm from "./components/postForm.js";
 
-const init = () => {
+const init = async () => {
   const pageContent = document.querySelector("#page-content");
 
-  const postFormElement = postForm();
+  pageContent.textContent = "Loading...";
+
+  const postFormElement = await postForm();
+  pageContent.textContent = "";
   pageContent.append(postFormElement);
 };
 

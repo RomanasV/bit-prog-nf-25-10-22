@@ -1,4 +1,7 @@
-const postForm = () => {
+import { createPost } from "../api/posts.js";
+import { getUsers } from "../api/users.js";
+
+const postForm = async () => {
   const postFormElement = document.createElement("form");
   postFormElement.classList.add("post-form");
 
@@ -33,26 +36,53 @@ const postForm = () => {
   bodyInput.required = true;
   bodyControl.append(bodyInput);
 
-  const userIdControl = document.createElement("div");
-  userIdControl.classList.add("form-control");
-  postFormElement.append(userIdControl);
+  const userControl = document.createElement("div");
+  userControl.classList.add("form-control");
+  postFormElement.append(userControl);
 
-  const userIdLabel = document.createElement("label");
-  userIdLabel.textContent = "User ID:";
-  userIdLabel.setAttribute("for", "userId");
-  userIdControl.append(userIdLabel);
+  const userLabel = document.createElement("label");
+  userLabel.textContent = "User:";
+  userLabel.setAttribute("for", "user");
+  userControl.append(userLabel);
 
-  const userIdInput = document.createElement("input");
-  userIdInput.type = "number";
-  userIdInput.id = "userId";
-  userIdInput.name = "userId";
-  userIdInput.required = true;
-  userIdControl.append(userIdInput);
+  const userSelect = document.createElement("select");
+  userSelect.id = "user";
+  userSelect.name = "user";
+  userControl.append(userSelect);
+
+  const users = await getUsers();
+
+  users.forEach((user) => {
+    const userOption = document.createElement("option");
+    userOption.value = user.id;
+    userOption.textContent = user.name;
+    userSelect.append(userOption);
+  });
 
   const submitButton = document.createElement("button");
-  //   submitButton.type = "submit";
+  submitButton.type = "submit";
   submitButton.textContent = "Create Post";
   postFormElement.append(submitButton);
+
+  postFormElement.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const titleInput = document.querySelector("#title");
+    const bodyInput = document.querySelector("#body");
+    const userSelect = document.querySelector("#user");
+
+    const title = titleInput.value;
+    const body = bodyInput.value;
+    const userId = userSelect.value;
+
+    const postData = {
+      title,
+      body,
+      userId,
+    };
+
+    const newPostResponse = await createPost(postData);
+  });
 
   return postFormElement;
 };

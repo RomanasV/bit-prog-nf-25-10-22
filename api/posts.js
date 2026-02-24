@@ -15,7 +15,7 @@ export const createPost = async (data) => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-type": "application/json; charset=UTF-8",
     },
     body: JSON.stringify(data),
   });
