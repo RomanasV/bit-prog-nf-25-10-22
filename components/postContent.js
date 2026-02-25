@@ -1,4 +1,5 @@
 import { deletePost } from "../api/posts.js";
+import { firstLetterToUpperCase } from "../utils/dataFormat.js";
 
 const postContent = (param) => {
   // const title = param.title;
@@ -16,7 +17,7 @@ const postContent = (param) => {
   postWrapper.classList.add("post-wrapper");
 
   const postTitle = document.createElement("h1");
-  postTitle.textContent = id + ". " + title;
+  postTitle.textContent = id + ". " + firstLetterToUpperCase(title);
   postWrapper.append(postTitle);
 
   const deleteButton = document.createElement("button");
@@ -39,7 +40,7 @@ const postContent = (param) => {
 
   if (body) {
     const postBody = document.createElement("p");
-    postBody.textContent = "Body: " + body;
+    postBody.textContent = "Body: " + firstLetterToUpperCase(body);
     postWrapper.append(postBody);
   }
 

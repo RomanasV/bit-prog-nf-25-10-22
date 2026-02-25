@@ -82,6 +82,11 @@ const postForm = async () => {
     };
 
     const newPostResponse = await createPost(postData);
+    postFormElement.reset();
+
+    const postCreatedMessage = document.createElement("p");
+    postCreatedMessage.textContent = `Post (${newPostResponse.id}) created successfully.`;
+    postFormElement.append(postCreatedMessage);
   });
 
   return postFormElement;

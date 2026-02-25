@@ -1,3 +1,5 @@
+import { firstLetterToUpperCase } from "../utils/dataFormat.js";
+
 const postsList = (data) => {
   const postsListWrapper = document.createElement("div");
   postsListWrapper.classList.add("post-wrapper");
@@ -19,7 +21,7 @@ const postsList = (data) => {
       const { title, id } = post;
       const postElement = document.createElement("li");
       const postLink = document.createElement("a");
-      postLink.textContent = id + ". " + title;
+      postLink.textContent = id + ". " + firstLetterToUpperCase(title);
       postLink.href = `/post.html?post-id=${id}`;
       postElement.append(postLink);
       postsList.append(postElement);
