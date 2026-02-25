@@ -38,6 +38,11 @@ const postContent = (param) => {
     postWrapper.append(postsLink);
   });
 
+  const editLink = document.createElement("a");
+  editLink.textContent = "Edit Post";
+  editLink.href = `edit-post.html?post-id=${id}`;
+  postWrapper.append(editLink);
+
   if (body) {
     const postBody = document.createElement("p");
     postBody.textContent = "Body: " + firstLetterToUpperCase(body);
