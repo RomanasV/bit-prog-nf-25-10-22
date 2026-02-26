@@ -20,7 +20,6 @@ const editPostForm = async (data) => {
   titleInput.type = "text";
   titleInput.id = "title";
   titleInput.name = "title";
-  titleInput.value = title;
   titleInput.required = true;
   titleControl.append(titleInput);
 
@@ -37,7 +36,6 @@ const editPostForm = async (data) => {
   bodyInput.id = "body";
   bodyInput.name = "body";
   bodyInput.required = true;
-  bodyInput.value = body;
   bodyControl.append(bodyInput);
 
   const userControl = document.createElement("div");
@@ -63,6 +61,8 @@ const editPostForm = async (data) => {
     userSelect.append(userOption);
   });
 
+  titleInput.value = title;
+  bodyInput.value = body;
   userSelect.value = userId;
 
   const submitButton = document.createElement("button");

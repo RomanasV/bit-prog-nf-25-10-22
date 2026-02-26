@@ -1,7 +1,7 @@
-import { createPost } from "../api/posts.js";
+import { createPost, updatePost } from "../api/posts.js";
 import { getUsers } from "../api/users.js";
 
-const postForm = async () => {
+const postForm = async (data) => {
   const postFormElement = document.createElement("form");
   postFormElement.classList.add("post-form");
 
@@ -10,7 +10,7 @@ const postForm = async () => {
   postFormElement.append(titleControl);
 
   const titleLabel = document.createElement("label");
-  titleLabel.textContent = "Title:";
+  titleLabel.textContent = "Post title:";
   titleLabel.setAttribute("for", "title");
   titleControl.append(titleLabel);
 
@@ -59,9 +59,17 @@ const postForm = async () => {
     userSelect.append(userOption);
   });
 
+  if (data) {
+    const { title, body, userId } = data;
+
+    titleInput.value = title;
+    bodyInput.value = body;
+    userSelect.value = userId;
+  }
+
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.textContent = "Create Post";
+  submitButton.textContent = data ? "Edit Post" : "Create Post";
   postFormElement.append(submitButton);
 
   postFormElement.addEventListener("submit", async (event) => {
@@ -77,12 +85,28 @@ const postForm = async () => {
       userId,
     };
 
-    const newPostResponse = await createPost(postData);
-    postFormElement.reset();
+    if (data) {
+      postData.id = data.id;
+    }
 
-    const postCreatedMessage = document.createElement("p");
-    postCreatedMessage.textContent = `Post (${newPostResponse.id}) created successfully.`;
-    postFormElement.append(postCreatedMessage);
+    let postResponse = null;
+
+    if (data) {
+      postResponse = await updatePost(postData);
+    } else {
+      postResponse = await createPost(postData);
+      postFormElement.reset();
+    }
+
+    const postResponseMessage = document.createElement("p");
+
+    if (data) {
+      postResponseMessage.textContent = `Post (${postResponse.id}) edited successfully.`;
+    } else {
+      postResponseMessage.textContent = `Post (${postResponse.id}) created successfully.`;
+    }
+
+    postFormElement.append(postResponseMessage);
   });
 
   return postFormElement;
