@@ -1,11 +1,10 @@
-import { getUser } from "./api/users.js";
-import userContent from "./components/userContent.js";
-import navigationElement from "./navigationElement.js";
+import { getUser } from "../api/users.js";
+import userContent from "../components/userContent.js";
+import navigationElement from "../components/navigationElement.js";
+import { getUrlParams } from "../utils/urlParams.js";
 
 const init = async () => {
-  const urlSearch = location.search;
-  const urlSearchParams = new URLSearchParams(urlSearch);
-  const userId = urlSearchParams.get("user-id");
+  const userId = getUrlParams("user-id");
 
   const pageContent = document.querySelector("#content");
 

@@ -1,11 +1,10 @@
-import { getPost } from "./api/posts.js";
-import postContent from "./components/postContent.js";
-import navigationElement from "./navigationElement.js";
+import { getPost } from "../api/posts.js";
+import postContent from "../components/postContent.js";
+import navigationElement from "../components/navigationElement.js";
+import { getUrlParams } from "../utils/urlParams.js";
 
 const init = async () => {
-  const urlSearch = location.search;
-  const urlSearchParams = new URLSearchParams(urlSearch);
-  const postId = urlSearchParams.get("post-id");
+  const postId = getUrlParams("post-id");
 
   const pageContent = document.querySelector("#content");
 

@@ -1,3 +1,5 @@
+import { firstLetterToUpperCase } from "../utils/dataFormat.js";
+
 const postsList = (data) => {
   const postsListWrapper = document.createElement("div");
   postsListWrapper.classList.add("post-wrapper");
@@ -5,6 +7,11 @@ const postsList = (data) => {
   const postsListTitle = document.createElement("h2");
   postsListTitle.textContent = data.length > 0 ? "Posts:" : "No Posts";
   postsListWrapper.append(postsListTitle);
+
+  const newPostLink = document.createElement("a");
+  newPostLink.textContent = "Create New Post";
+  newPostLink.href = "create-post.html";
+  postsListWrapper.append(newPostLink);
 
   if (data.length > 0) {
     const postsList = document.createElement("ul");
@@ -14,7 +21,7 @@ const postsList = (data) => {
       const { title, id } = post;
       const postElement = document.createElement("li");
       const postLink = document.createElement("a");
-      postLink.textContent = id + ". " + title;
+      postLink.textContent = id + ". " + firstLetterToUpperCase(title);
       postLink.href = `/post.html?post-id=${id}`;
       postElement.append(postLink);
       postsList.append(postElement);

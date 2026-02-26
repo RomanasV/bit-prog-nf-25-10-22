@@ -1,6 +1,6 @@
-import { getPosts } from "./api/posts.js";
-import postsList from "./components/postsList.js";
-import navigationElement from "./navigationElement.js";
+import { getPosts } from "../api/posts.js";
+import postsList from "../components/postsList.js";
+import navigationElement from "../components/navigationElement.js";
 
 const init = async () => {
   const content = document.querySelector("#content");
