@@ -67,10 +67,6 @@ const postForm = async () => {
   postFormElement.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const titleInput = document.querySelector("#title");
-    const bodyInput = document.querySelector("#body");
-    const userSelect = document.querySelector("#user");
-
     const title = titleInput.value;
     const body = bodyInput.value;
     const userId = userSelect.value;

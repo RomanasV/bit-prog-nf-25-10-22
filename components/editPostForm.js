@@ -1,8 +1,9 @@
-import { createPost } from "../api/posts.js";
+import { updatePost } from "../api/posts.js";
 import { getUsers } from "../api/users.js";
 
 const editPostForm = async (data) => {
-  console.log("🚀 ~ editPostForm ~ data:", data);
+  const { title, body, userId, id } = data;
+
   const postFormElement = document.createElement("form");
   postFormElement.classList.add("post-form");
 
@@ -19,7 +20,7 @@ const editPostForm = async (data) => {
   titleInput.type = "text";
   titleInput.id = "title";
   titleInput.name = "title";
-  titleInput.value = data.title;
+  titleInput.value = title;
   titleInput.required = true;
   titleControl.append(titleInput);
 
@@ -36,6 +37,7 @@ const editPostForm = async (data) => {
   bodyInput.id = "body";
   bodyInput.name = "body";
   bodyInput.required = true;
+  bodyInput.value = body;
   bodyControl.append(bodyInput);
 
   const userControl = document.createElement("div");
@@ -61,17 +63,15 @@ const editPostForm = async (data) => {
     userSelect.append(userOption);
   });
 
+  userSelect.value = userId;
+
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.textContent = "Create Post";
+  submitButton.textContent = "Edit Post";
   postFormElement.append(submitButton);
 
   postFormElement.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    const titleInput = document.querySelector("#title");
-    const bodyInput = document.querySelector("#body");
-    const userSelect = document.querySelector("#user");
 
     const title = titleInput.value;
     const body = bodyInput.value;
@@ -81,14 +81,14 @@ const editPostForm = async (data) => {
       title,
       body,
       userId,
+      id,
     };
 
-    const newPostResponse = await createPost(postData);
-    postFormElement.reset();
+    const postResponse = await updatePost(postData);
 
-    const postCreatedMessage = document.createElement("p");
-    postCreatedMessage.textContent = `Post (${newPostResponse.id}) created successfully.`;
-    postFormElement.append(postCreatedMessage);
+    const postResponseMessage = document.createElement("p");
+    postResponseMessage.textContent = `Post (${postResponse.id}) edited successfully.`;
+    postFormElement.append(postResponseMessage);
   });
 
   return postFormElement;
