@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+}
+
+.container {
+  background-color: #eee;
+  height: 500px;
+  width: 500px;
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: flex-start;
+
+  align-items: flex-start;
+
+  gap: 20px;
+}
