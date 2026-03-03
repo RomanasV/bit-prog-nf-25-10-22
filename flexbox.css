@@ -27,11 +27,44 @@
   width: 500px;
   display: flex;
 
-  flex-direction: row;
+  flex-direction: column;
 
   justify-content: flex-start;
-
-  align-items: flex-start;
+  align-items: center;
 
   gap: 20px;
+}
+
+.red {
+  order: 10;
+}
+
+.green {
+  order: 5;
+  align-self: flex-start;
+}
+
+.flex-container {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section {
+  background-color: #eee;
+  padding: 20px;
+  width: calc((100% - 20px) / 2);
+}
+
+.grid-container {
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-section {
+  background-color: #eee;
+  padding: 20px;
 }
