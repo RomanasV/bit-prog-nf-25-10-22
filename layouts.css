@@ -83,3 +83,30 @@
   width: 100%;
   height: calc(100% / 3 * 2);
 }
+
+:root {
+  font-size: 20px;
+}
+
+h2 {
+  color: green;
+  font-size: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: blue;
+  font-size: 1rem;
+}
+
+button {
+  color: blueviolet;
+  font-size: 1em;
+  padding: 1em 2em;
+}
+
+.test {
+  border: 1px solid black;
+  font-size: 40px;
+}
