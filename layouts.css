@@ -216,16 +216,14 @@ button {
   display: grid;
 }
 
-.container-grid-2-1 .inner-container-1,
-.container-grid-2-1 .inner-container-3,
-.container-grid-2-1 .inner-container-5 {
+.container-grid-2-1 .inner-container {
   display: grid;
+}
+
+.container-grid-2-1 .inner-container:nth-child(odd) {
   grid-template-columns: 2fr 1fr;
 }
 
-.container-grid-2-1 .inner-container-2,
-.container-grid-2-1 .inner-container-4,
-.container-grid-2-1 .inner-container-6 {
-  display: grid;
+.container-grid-2-1 .inner-container:nth-child(even) {
   grid-template-columns: 1fr 2fr;
 }
