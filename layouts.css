@@ -110,3 +110,122 @@ button {
   border: 1px solid black;
   font-size: 40px;
 }
+
+/* GRID */
+
+.container-grid {
+  margin-bottom: 30px;
+  height: 600px;
+  width: 600px;
+  background-color: lightgray;
+}
+
+.container-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.container-grid-1 .item-1 {
+  /* Pradinis pvz. */
+  /* grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4; */
+
+  /* DRY pvz. */
+  /* grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 4; */
+
+  /* Span pvz. */
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: span 2;
+}
+
+.container-grid-1 .item-2 {
+  /* grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+
+  /* grid-column-start: 3;
+  grid-row-start: 1; */
+
+  /* grid-column: 3 / 4;
+  grid-row: 1 / 2; */
+
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.container-grid-1 .item-3 {
+  /* grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4; */
+
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.container-grid-1 .item-4 {
+  /* grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3; */
+
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.container-grid-1 .item-5 {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4; */
+
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.container-grid-1 .item-6 {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.container-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.container-grid-2 .item-1,
+.container-grid-2 .item-4,
+.container-grid-2 .item-5 {
+  grid-column-end: span 2;
+}
+
+.container-grid-2-1 {
+  display: grid;
+}
+
+.container-grid-2-1 .inner-container-1,
+.container-grid-2-1 .inner-container-3,
+.container-grid-2-1 .inner-container-5 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.container-grid-2-1 .inner-container-2,
+.container-grid-2-1 .inner-container-4,
+.container-grid-2-1 .inner-container-6 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
