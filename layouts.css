@@ -84,31 +84,79 @@
   height: calc(100% / 3 * 2);
 }
 
-:root {
-  font-size: 20px;
+.container-flex-7 {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h2 {
-  color: green;
-  font-size: 1em;
-  margin-top: 0.25em;
-  margin-bottom: 0.5em;
+.container-flex-7 .inner-container:nth-of-type(3n + 1) {
+  height: calc(100% / 3);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-p {
-  color: blue;
-  font-size: 1rem;
+.container-flex-7 .inner-container:nth-of-type(3n + 1) .child-1 {
+  height: 100%;
+  width: calc(100% / 3);
 }
 
-button {
-  color: blueviolet;
-  font-size: 1em;
-  padding: 1em 2em;
+.container-flex-7 .inner-container:nth-of-type(3n + 1) .child-2 {
+  height: 50%;
+  width: calc(100% / 6);
 }
 
-.test {
-  border: 1px solid black;
-  font-size: 40px;
+.container-flex-7 .inner-container:nth-of-type(3n + 1) .child-3 {
+  height: 50%;
+  width: calc(100% / 6);
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 1) .child-4 {
+  height: 100%;
+  width: 50%;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 2) {
+  height: calc(100% / 3 * 2);
+  width: calc(100% / 3);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 2) .child-1 {
+  height: calc(100% / 3 * 2);
+  width: 100%;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 2) .child-2 {
+  height: calc(100% / 3);
+  width: 50%;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 2) .child-3 {
+  height: calc(100% / 3);
+  width: 50%;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 3) {
+  height: calc(100% / 3 * 2);
+  width: calc(100% / 3 * 2);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 3) .child-1 {
+  height: 100%;
+  width: 75%;
+}
+
+.container-flex-7 .inner-container:nth-of-type(3n + 3) .child-2,
+.container-flex-7 .inner-container:nth-of-type(3n + 3) .child-3,
+.container-flex-7 .inner-container:nth-of-type(3n + 3) .child-4 {
+  height: calc(100% / 3);
+  width: 25%;
 }
 
 /* GRID */
@@ -227,3 +275,119 @@ button {
 .container-grid-2-1 .inner-container:nth-child(even) {
   grid-template-columns: 1fr 2fr;
 }
+
+.container-grid-7 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container-grid-7 .item-1 {
+  /* grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 2; */
+
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.container-grid-7 .item-2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.container-grid-7 .item-3 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.container-grid-7 .item-4 {
+  grid-column: 4 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.container-grid-7 .item-5 {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.container-grid-7 .item-6 {
+  grid-column: 3 / span 3;
+  grid-row: 3 / span 3;
+}
+
+.container-grid-7 .item-7 {
+  grid-column: 6;
+  grid-row: 3;
+}
+
+.container-grid-7 .item-8 {
+  grid-column: 6;
+  grid-row: 4;
+}
+
+.container-grid-7 .item-9 {
+  grid-column: 6;
+  grid-row: 5;
+}
+
+.container-grid-7 .item-10 {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.container-grid-7 .item-11 {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.container-grid-7-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.container-grid-7-1 .inner-container-1 {
+  grid-column-end: span 2;
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.container-grid-7-1 .inner-container-1 .child-1,
+.container-grid-7-1 .inner-container-1 .child-3 {
+  grid-row-end: span 2;
+}
+
+.container-grid-7-1 .inner-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+.container-grid-7-1 .inner-container-2 .child-1 {
+  grid-column-end: span 2;
+}
+
+.container-grid-7-1 .inner-container-3 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+}
+
+.container-grid-7-1 .inner-container-3 .child-1 {
+  grid-row-end: span 3;
+  /* width: 75%;
+  height: 100%; */
+}
+
+/* .container-grid-7-1 .inner-container-3 .child-2,
+.container-grid-7-1 .inner-container-3 .child-3,
+.container-grid-7-1 .inner-container-3 .child-4 {
+  height: calc(100% / 3);
+  width: 25%;
+} */
