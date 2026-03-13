@@ -1,0 +1,93 @@
+:root {
+  --testimonials-gap: 20px;
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--grey-100);
+}
+
+.testimonials-wrapper {
+  display: flex;
+  gap: var(--testimonials-gap);
+}
+
+.main-testimonials {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--testimonials-gap);
+}
+
+.side-testimonials {
+  width: 25%;
+}
+
+.main-testimonials .testimonial-item {
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 1),
+.main-testimonials .testimonial-item:nth-of-type(4n + 4) {
+  width: calc((100% - var(--testimonials-gap)) / 3 * 2);
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 2),
+.main-testimonials .testimonial-item:nth-of-type(4n + 3) {
+  width: calc((100% - var(--testimonials-gap)) / 3);
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 1) {
+  background-color: var(--purple-500);
+  color: var(--white);
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 2) {
+  background-color: var(--grey-500);
+  color: var(--white);
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 3) {
+  background-color: var(--white);
+}
+
+.main-testimonials .testimonial-item:nth-of-type(4n + 4) {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.side-testimonials .testimonial-item:nth-of-type(odd) {
+  background-color: var(--white);
+}
+
+.side-testimonials .testimonial-item:nth-of-type(even) {
+  background-color: var(--grey-500);
+  color: var(--white);
+}
+
+.testimonial-item {
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.testimonial-item .testimonial-quote p:first-of-type::before {
+  content: "“";
+}
+
+.testimonial-item .testimonial-quote p:last-of-type::after {
+  content: "”";
+}
