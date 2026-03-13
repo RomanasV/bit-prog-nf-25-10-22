@@ -51,6 +51,12 @@ body {
   width: calc((100% - var(--testimonials-gap)) / 3);
 }
 
+.main-testimonials .testimonial-item:first-of-type {
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 50px) top;
+}
+
 .main-testimonials .testimonial-item:nth-of-type(4n + 1) {
   background-color: var(--purple-500);
   color: var(--white);
@@ -82,6 +88,24 @@ body {
 .testimonial-item {
   padding: 25px;
   border-radius: 10px;
+}
+
+.testimonial-item .testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-item .testimonial-image {
+  height: 56px;
+  width: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.testimonial-item .testimonial-person-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-item .testimonial-quote p:first-of-type::before {
