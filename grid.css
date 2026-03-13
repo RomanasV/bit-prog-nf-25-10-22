@@ -29,13 +29,13 @@
   width: 500px;
   display: grid;
 
-  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
 }
 
 .green {
   grid-column-start: 1;
-  grid-column-end: 6;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
 }
