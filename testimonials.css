@@ -133,3 +133,41 @@ body {
 .testimonial-item .testimonial-quote p:last-of-type::after {
   content: "”";
 }
+
+.testimonial-item-grid-area {
+  background-color: var(--purple-500);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: 56px auto auto;
+  column-gap: 15px;
+  grid-template-areas:
+    "image  info"
+    "title  title"
+    "quote  quote";
+}
+
+.testimonial-item-grid-area .testimonial-image {
+  border-radius: 50%;
+  grid-area: image;
+}
+
+.testimonial-item-grid-area .testimonial-person-info {
+  grid-area: info;
+  align-self: center;
+  display: grid;
+  align-items: center;
+}
+
+.testimonial-item-grid-area .testimonial-title {
+  grid-area: title;
+}
+
+.testimonial-item-grid-area .testimonial-quote {
+  grid-area: quote;
+}
