@@ -159,8 +159,8 @@ body {
 
 .testimonial-item-grid-area .testimonial-person-info {
   grid-area: info;
-  align-self: center;
   display: grid;
+  align-self: center;
   align-items: center;
 }
 

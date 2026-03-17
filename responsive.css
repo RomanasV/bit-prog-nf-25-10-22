@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: blueviolet;
+  color: white;
+  font-size: 30px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    background-color: green;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    background-color: pink;
+    color: black;
+  }
+}
+
+/* DESKTOP FIRST pavyzdys */
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 600px) {
+}
