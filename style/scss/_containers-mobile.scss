@@ -1,0 +1,23 @@
+@use "variables/colors" as colors;
+@use "variables/spacings" as s;
+@use "mixins/responsive-mobile" as r;
+
+.container-mobile {
+  background-color: colors.$color-pink;
+  margin-bottom: s.$spacing-large;
+
+  @include r.sm {
+    background-color: colors.$color-green;
+    color: colors.$color-white;
+  }
+
+  @include r.md {
+    background-color: colors.$color-blueviolet;
+    font-size: 30px;
+  }
+
+  @include r.lg {
+    width: 70%;
+    padding: s.$spacing-large;
+  }
+}

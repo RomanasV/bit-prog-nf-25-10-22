@@ -1,5 +1,6 @@
 @use "variables/colors" as colors;
 @use "variables/spacings" as s;
+@use "mixins/responsive";
 
 .container {
   background-color: colors.$color-blueviolet;
@@ -8,71 +9,58 @@
   padding: s.$spacing-large;
   margin-bottom: s.$spacing-large;
   width: 70%;
-}
 
-@media (max-width: 1000px) {
-  .container {
+  @include responsive.lg {
     width: 100%;
     padding: 0;
   }
-}
 
-@media (max-width: 800px) {
-  .container {
+  @include responsive.md {
     background-color: colors.$color-green;
     font-size: 16px;
   }
-}
 
-@media (max-width: 600px) {
-  .container {
+  @include responsive.sm {
     background-color: colors.$color-pink;
     color: colors.$color-black;
   }
-}
 
-.container-mobile {
-  background-color: colors.$color-pink;
-  margin-bottom: s.$spacing-large;
-}
+  section {
+    background-color: colors.$color-gray-light;
+    padding: s.$spacing-medium;
+    margin-bottom: s.$spacing-medium;
 
-@media (min-width: 601px) {
-  .container-mobile {
-    background-color: colors.$color-green;
-    color: colors.$color-white;
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .section-content {
+      margin-top: s.$spacing-small;
+
+      ul {
+        margin: 0;
+        padding-left: s.$spacing-small;
+
+        li {
+          margin-bottom: s.$spacing-small;
+
+          @include responsive.md {
+            margin-bottom: s.$spacing-tiny;
+          }
+
+          @include responsive.sm {
+            margin-bottom: s.$spacing-xxs;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
-}
-
-@media (min-width: 801px) {
-  .container-mobile {
-    background-color: colors.$color-blueviolet;
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 1001px) {
-  .container-mobile {
-    width: 70%;
-    padding: s.$spacing-large;
-  }
-}
-
-/* DESKTOP FIRST pavyzdys */
-@media (max-width: 1000px) {
-}
-
-@media (max-width: 800px) {
-}
-
-@media (max-width: 600px) {
-}
-
-/* MOBILE FIRST pavyzdys */
-@media (min-width: 601px) {
-}
-
-@media (min-width: 801px) {
-}
-
-@media (min-width: 1001px) {
 }
