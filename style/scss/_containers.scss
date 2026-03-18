@@ -1,0 +1,78 @@
+@use "variables/colors" as colors;
+@use "variables/spacings" as s;
+
+.container {
+  background-color: colors.$color-blueviolet;
+  color: colors.$color-white;
+  font-size: 30px;
+  padding: s.$spacing-large;
+  margin-bottom: s.$spacing-large;
+  width: 70%;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    background-color: colors.$color-green;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    background-color: colors.$color-pink;
+    color: colors.$color-black;
+  }
+}
+
+.container-mobile {
+  background-color: colors.$color-pink;
+  margin-bottom: s.$spacing-large;
+}
+
+@media (min-width: 601px) {
+  .container-mobile {
+    background-color: colors.$color-green;
+    color: colors.$color-white;
+  }
+}
+
+@media (min-width: 801px) {
+  .container-mobile {
+    background-color: colors.$color-blueviolet;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .container-mobile {
+    width: 70%;
+    padding: s.$spacing-large;
+  }
+}
+
+/* DESKTOP FIRST pavyzdys */
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 600px) {
+}
+
+/* MOBILE FIRST pavyzdys */
+@media (min-width: 601px) {
+}
+
+@media (min-width: 801px) {
+}
+
+@media (min-width: 1001px) {
+}

@@ -1,0 +1,75 @@
+.container {
+  background-color: blueviolet;
+  color: white;
+  font-size: 30px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    background-color: green;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    background-color: pink;
+    color: black;
+  }
+}
+
+.container-mobile {
+  background-color: pink;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 601px) {
+  .container-mobile {
+    background-color: green;
+    color: white;
+  }
+}
+
+@media (min-width: 801px) {
+  .container-mobile {
+    background-color: blueviolet;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .container-mobile {
+    width: 70%;
+    padding: 30px;
+  }
+}
+
+/* DESKTOP FIRST pavyzdys */
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 600px) {
+}
+
+/* MOBILE FIRST pavyzdys */
+@media (min-width: 601px) {
+}
+
+@media (min-width: 801px) {
+}
+
+@media (min-width: 1001px) {
+}
