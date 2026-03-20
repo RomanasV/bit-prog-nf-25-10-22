@@ -1,0 +1,160 @@
+@use "testimonials-responsive" as r;
+
+$testimonials-gap: 20px;
+$purple-50: hsl(260, 100%, 95%);
+$purple-300: hsl(264, 82%, 80%);
+$purple-500: hsl(263, 55%, 52%);
+$white: hsl(0, 0%, 100%);
+$grey-100: hsl(214, 17%, 92%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-400: hsl(224, 10%, 45%);
+$grey-500: hsl(217, 19%, 35%);
+$dark-blue: hsl(219, 29%, 14%);
+$black: hsl(0, 0%, 7%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $grey-100;
+  margin: 0;
+}
+
+.container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.testimonials-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: $testimonials-gap;
+
+  @include r.xl {
+    grid-template-columns: 7fr 3fr;
+  }
+
+  @include r.lg {
+    grid-template-columns: 6fr 4fr;
+  }
+
+  @include r.md {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include r.sm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $testimonials-gap;
+
+  @include r.xl {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include r.lg {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-item {
+    &:nth-of-type(4n + 1),
+    &:nth-of-type(4n + 4) {
+      grid-column-end: span 2;
+
+      @include r.xl {
+        grid-column-end: span 1;
+      }
+    }
+
+    &:nth-of-type(4n + 2),
+    &:nth-of-type(4n + 3) {
+    }
+
+    &:first-of-type {
+      background-image: url("/images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 50px) top;
+    }
+
+    &:nth-of-type(4n + 1) {
+      background-color: $purple-500;
+      color: $white;
+    }
+
+    &:nth-of-type(4n + 2) {
+      background-color: $grey-500;
+      color: $white;
+    }
+
+    &:nth-of-type(4n + 3) {
+      background-color: $white;
+    }
+
+    &:nth-of-type(4n + 4) {
+      background-color: $dark-blue;
+      color: $white;
+    }
+  }
+}
+
+.side-testimonials {
+  .testimonial-item {
+    &:nth-of-type(odd) {
+      background-color: $white;
+    }
+
+    &:nth-of-type(even) {
+      background-color: $grey-500;
+      color: $white;
+    }
+  }
+}
+
+.testimonial-item {
+  padding: 25px;
+  border-radius: 10px;
+
+  .testimonial-person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .testimonial-image {
+    height: 56px;
+    width: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .testimonial-person-info {
+    display: grid;
+  }
+
+  .testimonial-quote {
+    p {
+      &:first-of-type {
+        &::before {
+          content: "“";
+        }
+      }
+
+      &:last-of-type {
+        &::after {
+          content: "”";
+        }
+      }
+    }
+  }
+}

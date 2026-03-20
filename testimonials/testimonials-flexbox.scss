@@ -1,0 +1,187 @@
+@use "testimonials-responsive" as r;
+
+$testimonials-gap: 20px;
+$purple-50: hsl(260, 100%, 95%);
+$purple-300: hsl(264, 82%, 80%);
+$purple-500: hsl(263, 55%, 52%);
+$white: hsl(0, 0%, 100%);
+$grey-100: hsl(214, 17%, 92%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-400: hsl(224, 10%, 45%);
+$grey-500: hsl(217, 19%, 35%);
+$dark-blue: hsl(219, 29%, 14%);
+$black: hsl(0, 0%, 7%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $grey-100;
+  margin: 0;
+}
+
+.container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  gap: $testimonials-gap;
+
+  @include r.sm {
+    flex-wrap: wrap;
+  }
+}
+
+.main-testimonials {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $testimonials-gap;
+
+  @include r.xl {
+    width: 70%;
+  }
+
+  @include r.lg {
+    width: 60%;
+  }
+
+  @include r.md {
+    width: 50%;
+  }
+
+  @include r.sm {
+    width: 100%;
+  }
+
+  .testimonial-item {
+    &:nth-of-type(4n + 1),
+    &:nth-of-type(4n + 4) {
+      width: calc((100% - $testimonials-gap) / 3 * 2);
+
+      @include r.xl {
+        width: calc((100% - $testimonials-gap) / 2);
+      }
+
+      @include r.lg {
+        width: 100%;
+      }
+    }
+
+    &:nth-of-type(4n + 2),
+    &:nth-of-type(4n + 3) {
+      width: calc((100% - $testimonials-gap) / 3);
+
+      @include r.xl {
+        width: calc((100% - $testimonials-gap) / 2);
+      }
+
+      @include r.lg {
+        width: 100%;
+      }
+    }
+
+    &:first-of-type {
+      background-image: url("/images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 50px) top;
+    }
+
+    &:nth-of-type(4n + 1) {
+      background-color: $purple-500;
+      color: $white;
+    }
+
+    &:nth-of-type(4n + 2) {
+      background-color: $grey-500;
+      color: $white;
+    }
+
+    &:nth-of-type(4n + 3) {
+      background-color: $white;
+    }
+
+    &:nth-of-type(4n + 4) {
+      background-color: $dark-blue;
+      color: $white;
+    }
+  }
+}
+
+.side-testimonials {
+  width: 25%;
+
+  @include r.xl {
+    width: 30%;
+  }
+
+  @include r.lg {
+    width: 40%;
+  }
+
+  @include r.md {
+    width: 50%;
+  }
+
+  @include r.sm {
+    width: 100%;
+  }
+
+  .testimonial-item {
+    &:nth-of-type(odd) {
+      background-color: $white;
+    }
+
+    &:nth-of-type(even) {
+      background-color: $grey-500;
+      color: $white;
+    }
+  }
+}
+
+.testimonial-item {
+  padding: 25px;
+  border-radius: 10px;
+
+  .testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .testimonial-image {
+    height: 56px;
+    width: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .testimonial-person-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-quote {
+    p {
+      &:first-of-type {
+        &::before {
+          content: "“";
+        }
+      }
+
+      &:last-of-type {
+        &::after {
+          content: "”";
+        }
+      }
+    }
+  }
+}
