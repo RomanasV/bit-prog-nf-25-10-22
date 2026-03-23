@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 2000px;
+}
+
+.container {
+  background-color: bisque;
+  height: 500px;
+  width: 500px;
+  display: flex;
+}
+.container .box {
+  color: white;
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+}
+.container .box.box-1 {
+  background-color: green;
+}
+.container .box.box-2 {
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .box.box-3 {
+  background-color: red;
+}/*# sourceMappingURL=position.css.map */

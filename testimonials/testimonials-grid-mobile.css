@@ -103,19 +103,19 @@ body {
   align-items: center;
   gap: 15px;
 }
-.testimonial-item .testimonial-image {
+.testimonial-item .testimonial-person .testimonial-image-wrapper .testimonial-image {
   height: 56px;
   width: 56px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
 }
-.testimonial-item .testimonial-person-info {
+.testimonial-item .testimonial-person .testimonial-person-info {
   display: grid;
 }
-.testimonial-item .testimonial-quote p:first-of-type::before {
+.testimonial-item .testimonial-content .testimonial-quote p:first-of-type::before {
   content: "“";
 }
-.testimonial-item .testimonial-quote p:last-of-type::after {
+.testimonial-item .testimonial-content .testimonial-quote p:last-of-type::after {
   content: "”";
 }/*# sourceMappingURL=testimonials-grid-mobile.css.map */

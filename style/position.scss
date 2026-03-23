@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 2000px;
+}
+
+.container {
+  background-color: bisque;
+  height: 500px;
+  width: 500px;
+  display: flex;
+
+  .box {
+    color: white;
+    height: 100px;
+    width: 100px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    display: grid;
+    // align-items: center;
+    // justify-items: center;
+    place-items: center;
+
+    &.box-1 {
+      background-color: green;
+    }
+
+    &.box-2 {
+      height: 60px;
+      width: 60px;
+      background-color: blue;
+      //   position: relative;
+      //   top: 30px;
+      //   left: 30px;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.box-3 {
+      background-color: red;
+    }
+  }
+}

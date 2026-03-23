@@ -123,30 +123,37 @@ body {
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 15px;
-  }
 
-  .testimonial-image {
-    height: 56px;
-    width: 56px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-
-  .testimonial-person-info {
-    display: grid;
-  }
-
-  .testimonial-quote {
-    p {
-      &:first-of-type {
-        &::before {
-          content: "“";
-        }
+    .testimonial-image-wrapper {
+      .testimonial-image {
+        height: 56px;
+        width: 56px;
+        object-fit: cover;
+        border-radius: 50%;
       }
 
-      &:last-of-type {
-        &::after {
-          content: "”";
+      .testimonial-person-badge {
+      }
+    }
+
+    .testimonial-person-info {
+      display: grid;
+    }
+  }
+
+  .testimonial-content {
+    .testimonial-quote {
+      p {
+        &:first-of-type {
+          &::before {
+            content: "“";
+          }
+        }
+
+        &:last-of-type {
+          &::after {
+            content: "”";
+          }
         }
       }
     }

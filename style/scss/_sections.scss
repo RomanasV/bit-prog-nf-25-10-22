@@ -3,15 +3,50 @@
   padding: 20px;
   margin-bottom: 20px;
 
-  h2 {
-    margin-top: 0;
-  }
+  .section-wrapper {
+    h2 {
+      margin-top: 0;
+    }
 
-  p {
-    margin-bottom: 0;
-  }
+    p {
+      margin-bottom: 0;
+    }
 
-  .section-content {
-    margin-top: 10px;
+    .section-content {
+      margin-top: 10px;
+    }
+
+    .section-content-secondary {
+      margin-top: 10px;
+
+      &:nth-of-type(4n + 1) {
+        background-color: $dark-blue;
+        color: $white;
+      }
+
+      &:nth-of-type(4n + 2) {
+        background-color: $grey-500;
+        color: $white;
+      }
+
+      &:nth-of-type(4n + 3) {
+        background-color: $white;
+      }
+    }
+
+    .section-description {
+      margin-top: 10px;
+      font-style: italic;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(4n + 1) {
+        @include r.xl {
+          grid-column: span 2;
+        }
+      }
+    }
   }
 }
