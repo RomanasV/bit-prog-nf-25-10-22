@@ -13,6 +13,9 @@ body {
   height: 500px;
   width: 500px;
   display: flex;
+  margin-top: 30px;
+  margin-left: 30px;
+  position: relative;
 }
 .container .box {
   color: white;
@@ -23,15 +26,21 @@ body {
 }
 .container .box.box-1 {
   background-color: green;
+  position: sticky;
+  top: 20px;
 }
 .container .box.box-2 {
   height: 60px;
-  width: 60px;
+  width: 120px;
   background-color: blue;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container .box.box-3 {
   background-color: red;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }/*# sourceMappingURL=position.css.map */
